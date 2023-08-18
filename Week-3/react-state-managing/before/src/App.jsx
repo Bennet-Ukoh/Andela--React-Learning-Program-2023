@@ -2,34 +2,24 @@ import React from "react";
 import "./App.css";
 import Footer from "./Footer";
 import Header from "./Header";
+import Products from "./Products";
+import Cart from "./Cart";
+import Details from "./Details";
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
-  // function renderProduct(p) {
-  //   return (
-  //     <div key={p.id} className="product">
-  //       <a href="/">
-  //         <img src={`/images/${p.image}`} alt={p.name} />
-  //         <h3>{p.name}</h3>
-  //         <p>${p.price}</p>
-  //       </a>
-  //     </div>
-  //   );
-  // }
-
   return (
     <>
       <div className="content">
         <Header />
+
         <main>
-          <section id="filters">
-            <label htmlFor="size">Filter by Size:</label>{" "}
-            <select id="size">
-              <option value="">All sizes</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
-          </section>
+          <Routes>
+            <Route path="/" element={<h1>Welcome to Carve Shoes</h1>} />
+            <Route path="/:category" element={<Products />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/details" element={<Details />} />
+          </Routes>
         </main>
       </div>
       <Footer />
