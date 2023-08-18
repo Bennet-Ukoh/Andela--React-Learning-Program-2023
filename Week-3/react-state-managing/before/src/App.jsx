@@ -18,7 +18,7 @@ export default function App() {
             <Route path="/" element={<h1>Welcome to Carve Shoes</h1>} />
             <Route path="/:category" element={<Products />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/details" element={<Details />} />
+            <Route path="/:category/:id" element={<Details />} />
           </Routes>
         </main>
       </div>
