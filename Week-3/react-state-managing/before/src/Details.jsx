@@ -32,7 +32,7 @@ const Details = (props) => {
           className="btn btn-primary"
           disabled={!sku}
           onClick={() => {
-            props.addToCart(id, sku);
+            props.dispatch({ type: "add", id, sku });
             navigate("/cart");
           }}
         >
